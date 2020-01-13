@@ -1,0 +1,208 @@
+///////////////////////////////////////////////
+// Burger
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 30px;
+    }
+}
+  
+/////////////////////////////////////////////////
+/// Navigation
+
+.menu-area {
+    display: flex;
+    background: #00a1d1;
+    align-items: center;
+    justify-content: space-between;
+
+
+    & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+        font-size: 22px;
+        padding: 35px 25px 35px 25px;
+    }
+
+    & ul {
+        list-style: none;
+        display: flex;
+    }
+
+    & li {
+        position: relative;
+        width: 100%;
+        text-align: center;
+
+        
+        &:first-child {
+            padding-top: 10px;
+        }
+    }
+
+    & .closebtn {
+        display: none;
+    }
+}
+
+.menu-area__locastic {
+    padding: 22px 0 22px 38px;
+}
+
+
+.dropdown-1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    top: 85px;
+
+    & li {
+        display: none;
+        position: relative;
+
+        &:hover {
+            display: block;
+        }
+    }
+
+    & a {
+        font-size: 18px;
+        background-color: #333333;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #mySidenav {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 1;
+        width: 0;
+        top: 0;
+        right: 0;
+        background-color: #333333;
+        color: white;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .menu-area a {
+        padding: 25px 0;
+        text-decoration: none;
+        font-size: 25px;
+        line-height: 1.5;
+        height: auto;
+        display: block;
+        transition: 0.3s;
+        color: #fff;
+    }
+
+    #mySidenav .closebtn {
+        position: absolute;
+        margin-right: 30px;
+        display: block;
+        font-size: 36px;
+        top: 0;
+        right: 0;
+        background-color: #00a1d1;
+        //padding: 28px 49px 23px 310px;
+    }
+
+    .menu-area img {
+        padding: 24px 0 24px 38px;
+    }
+
+    .dropdown-1 {
+        z-index: 10;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        top: 0;
+    }
+
+    .dropdown-1 a {
+        font-size: 18px;
+        padding: 5px;
+        color: #fff;
+
+        &:active {
+            color: #00a1d1;
+        }
+    }
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    #mySidenav.active {
+        width: 50%;
+        
+        .extra-space {
+            margin-top: 18px;
+        }
+    }
+
+        #mySidenav .closebtn {
+            position: absolute;
+            margin-right: 30px;
+            display: block;
+            font-size: 36px;
+            top: 0;
+            right: -30px;
+            padding: 25.5px 20px 25.5px 583px;
+            background-color: #00a1d1;
+            //padding: 28px 49px 23px 310px;
+        }
+}
+
+@media screen and (max-width: 640px) {
+    #mySidenav.active {
+        width: 100%;
+    }
+
+    #mySidenav .closebtn {
+        position: absolute;
+        margin-right: 30px;
+        display: block;
+        font-size: 36px;
+        top: 0;
+        right: -30px;
+        padding: 25.5px 20px 25.5px 583px;
+        background-color: #00a1d1;
+        //padding: 28px 49px 23px 310px;
+    }
+    
+    .dropdown-1 {
+        top: 0;
+    }
+}
+
+.menu-area a:hover {
+    //background: #008ab3;
+    //color: #fff;
+}
+
+.menu-area li:hover .dropdown-1 > li {
+    display: block;
+    top: 0;
+}
+
+#mySidenav:first-child .active {
+    background-color: red;
+}
